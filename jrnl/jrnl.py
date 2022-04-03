@@ -90,8 +90,9 @@ def _is_write_mode(args, config, **kwargs):
             args.short,
             args.starred,
             args.start_date,
+            args.stats,
             args.strict,
-            args.tags,
+            args.tags
         )
     )
 
@@ -222,6 +223,10 @@ def _search_journal(args, journal, **kwargs):
         now = time.parse("now")
         args.day = now.day
         args.month = now.month
+
+    if args.stats:
+        print("this is where stats go")
+        return
 
     journal.filter(
         tags=args.text,

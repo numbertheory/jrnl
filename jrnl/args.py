@@ -232,7 +232,7 @@ def parse_args(args=[]):
         help="Show only starred entries (marked with *)",
     )
     reading.add_argument(
-        "-stats",
+        "-stats", "--stats",
         dest="stats",
         action="store_true",
         help="Show statistics from selected journal.",
