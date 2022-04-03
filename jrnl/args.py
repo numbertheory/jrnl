@@ -232,6 +232,12 @@ def parse_args(args=[]):
         help="Show only starred entries (marked with *)",
     )
     reading.add_argument(
+        "-stats",
+        dest="stats",
+        action="store_true",
+        help="Show statistics from selected journal.",
+    )
+    reading.add_argument(
         "-n",
         dest="limit",
         default=None,
@@ -358,7 +364,7 @@ def parse_args(args=[]):
         default="",
         help="""
         Overrides default (created when first installed) config file for this command only.
-        
+
         Examples: \n
         \t - Use a work config file for this jrnl entry, call: \n
             \t jrnl --config-file /home/user1/work_config.yaml
